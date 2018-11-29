@@ -23,4 +23,7 @@ Run Project Step by Step
 4-Run Spring Boot project
 
 5-Enjoy
+
+
+Note:If project not run due to port confilict,you must change port in application.properties file.
   
