@@ -35,13 +35,13 @@ public class TodoListRepositoryTests {
 
     @Test
     public void testCreate() {
-        TodoList chores = new TodoList("chores", owner);
-        todoListRepositroy.save(chores);
+        TodoList sacidList = new TodoList("sacidTestList", owner);
+        todoListRepositroy.save(sacidList);
 
-        TodoList loadedChores = todoListRepositroy.findOneByIdAndOwner(3L,owner);
-        assertThat(loadedChores.getItems()).isEmpty();
-        assertThat(loadedChores.getName()).isEqualTo("chores");
-        assertThat(loadedChores.getOwner()).isEqualTo(owner);
+        TodoList loadedSacidList = todoListRepositroy.findOneByIdAndOwner(2L,owner);
+        assertThat(loadedSacidList.getItems()).isEmpty();
+        assertThat(loadedSacidList.getName()).isEqualTo("sacidTestList");
+        assertThat(loadedSacidList.getOwner()).isEqualTo(owner);
     }
 
     @Test
@@ -60,6 +60,6 @@ public class TodoListRepositoryTests {
     @Test
     public void testDelete() {
         todoListRepositroy.deleteByIdAndOwner(1L, owner);
-        assertNull(todoListRepositroy.findOneByIdAndOwner(3L,owner));
+        assertNull(todoListRepositroy.findOneByIdAndOwner(1L,owner));
     }
 }
